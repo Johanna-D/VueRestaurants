@@ -11,6 +11,9 @@ import 'leaflet-defaulticon-compatibility';
 import ListeDesRestaurants from './components/ListeDesRestaurants.vue'
 import HelloWorld from './components/HelloWorld.vue'
 import Restaurant from './components/Restaurant.vue'
+import Menu from './components/Menu.vue'
+import Commande from './components/Commande.vue'
+import Panier from './components/Panier.vue'
 
 Vue.use(VueRouter)
 Vue.use(VueMaterial)
@@ -25,6 +28,19 @@ const router = new VueRouter ({
     {
       path: '/restaurant/:id',
       component: Restaurant
+    },
+    {
+      path: '/menu',
+      component: Menu
+    },
+    {
+      path: '/commande',
+      component: Commande
+    },
+    {
+      path: '/panier',
+      name: 'Panier',
+      component: Panier
     },
     {
       path: '/hello',

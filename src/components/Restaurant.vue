@@ -1,10 +1,12 @@
 <template>
+<div>
   <div id="details">
-    <h1>
-      Détail du restaurant {{ restaurant.name }}
-    </h1>
+    
 
     <div id="description">
+      <h1>
+      Détail du restaurant {{ restaurant.name }}
+    </h1>
       <img
         :src="selectedImage"
         alt="Photo du restaurant"
@@ -25,9 +27,22 @@
           <md-icon>place</md-icon>
           <span class="md-list-item-text">{{ restaurant.borough }}</span>
         </md-list-item>
+
+        <md-list-item>
+          <router-link :to="'/menu' "
+              >Voir le menu</router-link
+            >
+        </md-list-item>
       </md-list>
     </div>
 
+ 
+
+
+
+  <div id="map">
+    <h1>Localisation</h1>
+    
     <div style="height: 500px; width: 100%">
       <l-map
         v-if="showMap"
@@ -48,6 +63,8 @@
         </l-marker>
       </l-map>
     </div>
+  </div>
+   </div>
   </div>
 </template>
 
@@ -145,12 +162,18 @@ Vue.component('CarteRestaurant', {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+template{
+  width: 100%;
+  height: 100%;
+}
+
 #details {
-  background-color: white;
+  /*background-color: white;*/
   padding: 10px;
-  width: 800px;
+  width: 90%;
+  min-height: 100%;
+  margin-top: 3%;
   margin: 0 auto;
-  box-shadow: 0px 0px 12px #414141;
 }
 
 .md-list {
@@ -160,11 +183,30 @@ Vue.component('CarteRestaurant', {
   display: inline-block;
   vertical-align: top;
   border: 1px solid rgba(#000, 0.12);
-  background-color: lightgray;
 }
 
-#description {
-  background-color: lightgray;
+#description, #map{
+  width: 40%;
+  height: 90%;
   padding: 20px;
+  overflow-x: auto;
+  overflow-y: auto;
+  background-color: white;
+  box-shadow: 0px 0px 12px #414141;
+}
+
+
+#description  {
+  position: absolute;
+  padding: 20px;
+  margin-left: 50px;
+}
+
+#description ::-webkit-scrollbar {
+  width: 16px;
+}
+
+#map {
+  margin-left: 55%;
 }
 </style>
