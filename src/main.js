@@ -7,6 +7,7 @@ import VueRouter from "vue-router"
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
 import 'leaflet-defaulticon-compatibility';
+import VueSimpleAlert from "vue-simple-alert";
 
 import ListeDesRestaurants from './components/ListeDesRestaurants.vue'
 import HelloWorld from './components/HelloWorld.vue'
@@ -17,7 +18,9 @@ import Panier from './components/Panier.vue'
 
 Vue.use(VueRouter)
 Vue.use(VueMaterial)
+Vue.use(VueSimpleAlert)
 Vue.config.productionTip = false
+
 
 const router = new VueRouter ({
   routes: [

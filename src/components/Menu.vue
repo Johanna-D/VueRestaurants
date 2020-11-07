@@ -5,9 +5,9 @@
     <div id="navigation">
       <router-link :to="{name:'Panier', params: {articles: dataPanier}} ">
       <md-button class="md-icon-button">
-        <md-icon>shopping_cart</md-icon>
+        <md-icon>shopping_cart</md-icon> 
       </md-button>
-      </router-link>
+      </router-link>{{dataPanier.length}} article(s)
     </div>
     
     <!--
@@ -47,6 +47,7 @@
    
     <div id="menu">
         <h1>Menu du jour</h1>
+        <br>
         <h2>Menu du midi</h2>
 
           <p>Le menu du midi comprend une entrée, un plat et un dessert. <br>
@@ -95,6 +96,7 @@
    </div>
     <div id="carte">
       <h1>Carte du jour</h1>
+      <br>
 
       
       <h2>Hors d'oeuvre</h2>
@@ -212,6 +214,7 @@ export default {
       prix: [],
       dataPanier: [],
       totalPanier: 0,
+      
     };
   },
   methods: {
@@ -262,6 +265,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+md-list {
+  width: 90%;
+}
 template{
   width: 100%;
   height: 100%

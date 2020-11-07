@@ -30,7 +30,7 @@
 
         <md-list-item>
           <router-link :to="'/menu' "
-              >Voir le menu</router-link
+              ><md-button>Voir le menu</md-button></router-link
             >
         </md-list-item>
       </md-list>

@@ -18,6 +18,9 @@
 
           <p><button>Ajouter</button></p>
         </form>
+
+
+
       </div>
 
       <div id="ModifierRestaurant" v-if="modifierResto == true">

@@ -1,45 +1,5 @@
 <template>
-    
-        <!--
-        <form @submit.prevent="validerCommande($event)">
-          <p>
-            <label>
-              Nom : <input name="nom" type="text"   />
-            </label>
-          </p>
-          <p>
-            <label>
-              Prénom : <input name="prenom" type="text"   />
-            </label>
-          </p>
-          <p>
-            <label>
-              Adresse : <input name="adresse" type="text"   />
-            </label>
-          </p>
-          <p>
-            <label>
-              Code postal : <input name="cp" type="number"   />
-            </label>
-          </p>
-          <p>
-            <label>
-              Adresse email : <input name="email" type="text"   />
-            </label>
-          </p>
-          <p><button @click="switchDiv()" >Commander</button></p>
-        </form>
-
--->
-
-
-
-
-
-
-
-
-         <form id="Infos" novalidate class="md-layout" @submit.prevent="validerCommande($event)">
+          <form id="Infos" novalidate class="md-layout" @submit.prevent="validerCommande($event)">
       <md-card class="md-layout-item md-size-50 md-small-size-100">
         <md-card-header>
           <div class="md-title">Informations de commande</div>
@@ -52,6 +12,7 @@
             <div class="md-layout-item md-small-size-100">
               <md-field >
                 <label for="nom">Nom</label>
+
                 <md-input name="nom"  />
               </md-field>
             </div>
@@ -97,11 +58,11 @@
 
 
         <md-card-actions>
-          <md-button type="submit" class="md-primary" >Valider la commande</md-button>
+          <md-button type="submit" class="md-primary" v-if="retour== false" >Valider la commande </md-button>
+          <router-link :to="'/' "><md-button class="md-primary" v-if="retour == true" >Retour à la page d'accueil </md-button></router-link>
         </md-card-actions>
       </md-card>
 
-      <md-snackbar >The user was saved with success!</md-snackbar>
     </form>
     
 </template>
@@ -115,26 +76,17 @@ export default {
   },
   data: function () {
     return {
+      retour: false,
     };
   },
   methods: {
       validerCommande(event) {
       // Pour éviter que la page ne se ré-affiche
       event.preventDefault();
+      
 
-      // Récupération du formulaire. Pas besoin de document.querySelector
-      // ou document.getElementById puisque c'est le formulaire qui a généré
-      // l'événement
-
-
-      // let form = event.target;  A REACTIVER QUAND UTILISE
-      // Récupération des valeurs des champs du formulaire
-      // en prévision d'un envoi multipart en ajax/fetch
-
-        
-      //let donneesFormulaire = new FormData(event.target); A REACTIVER QUAND UTILISE
-
-      //let mail = form.email.value;  A REACTIVER QUAND UTILISE
+      this.$alert("Nous vous remercions pour votre commande ! Vous serez livré à l'adresse indiquée. Nous vous contacterons par téléphone une fois sur place. Tous moyens de paiement acceptés lors de la remise de votre commande.");
+      this.retour = true;
       }
   },
   created() {

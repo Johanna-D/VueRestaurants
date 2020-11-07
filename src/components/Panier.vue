@@ -18,6 +18,10 @@
           <md-table-cell md-label="prix" >
             {{r[1]}}
           </md-table-cell>
+          <md-table-cell md-label="prix" >
+            <md-button @click="ajouterArticle(r)"><md-icon>add_circle_outline</md-icon></md-button>
+
+          </md-table-cell>
           <md-table-cell md-label="annuler" >
             <md-button @click="supprimerArticle(r)"><md-icon>delete_outline</md-icon></md-button>
           </md-table-cell>
@@ -60,7 +64,12 @@ export default {
 
       }
       
-    }
+      
+    },
+    ajouterArticle(article){
+        this.articles.push(article);
+        this.totalPanier += article[1];
+      }
     }
 }
 </script>
