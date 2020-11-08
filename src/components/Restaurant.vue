@@ -171,7 +171,7 @@ template{
   /*background-color: white;*/
   padding: 10px;
   width: 90%;
-  min-height: 100%;
+  height: 100%;
   margin-top: 3%;
   margin: 0 auto;
 }

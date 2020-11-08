@@ -10,39 +10,6 @@
       </router-link>{{dataPanier.length}} article(s)
     </div>
     
-    <!--
-   <div id="Panier">
-
-      <md-table >
-        <md-table-toolbar>
-          <div class="md-toolbar-section-start">
-            <h1 class="md-title">Panier</h1>
-          </div>
-        </md-table-toolbar>
-
-        
-        <md-table-row v-for="r of dataPanier" :key="r">
-
-          <md-table-cell md-label="nom" >
-            {{r[0]}}
-          </md-table-cell>
-          <md-table-cell md-label="prix" >
-            {{r[1]}}
-          </md-table-cell>
-          <md-table-cell md-label="annuler" >
-            <md-button @click="supprimerArticle(r)"><md-icon>delete_outline</md-icon></md-button>
-          </md-table-cell>
-          
-        </md-table-row>
-      </md-table>
-
-      <p>Total : {{totalPanier}} € </p>
-      <router-link :to="'/commande' "><md-button>Commander</md-button></router-link
-            >
-    
-     
-
-   </div>-->
 
    
     <div id="menu">
@@ -53,18 +20,10 @@
           <p>Le menu du midi comprend une entrée, un plat et un dessert. <br>
           Pour l'achat d'un menu du midi, une boisson vous est offerte.<br>
 
-          <p>Aujourdhui, le restaurant vous propose :<br>
-          <md-list>
-            <md-list-item>          
-              <span class="md-list-item-text">En entrée : {{midiEntree[0]}}</span>
-            </md-list-item>
-            <md-list-item>          
-              <span class="md-list-item-text">En plat : {{midiPlat[0]}}</span>
-            </md-list-item>
-            <md-list-item>          
-              <span class="md-list-item-text">En dessert : {{ midiDessert[0] }}</span>
-            </md-list-item>
-          </md-list>
+          <p style="border: 1px solid black"><br>Aujourdhui, le restaurant vous propose :<br><br>
+          En entrée : {{midiEntree[0]}}<br>
+          En plat : {{midiPlat[0]}}<br>
+          En dessert : {{ midiDessert[0] }}<br><br>
           Le tout pour {{priceMidi()}}€ <br>
           
           <md-button @click="ajouterPanier('Menu du midi', priceMidi())">Ajouter au panier</md-button>
@@ -77,18 +36,10 @@
         <p>Envie de variété ?<br>
         Le menu gastronomique vous propose un ensemble de deux entrées, un plat et deux desserts afin de ravir vos papilles.<br>
 
-          <p>Aujourdhui, le restaurant vous propose :<br>
-          <md-list>
-            <md-list-item>          
-              <span class="md-list-item-text">En entrée : {{gastroEntree1[0]}} et {{gastroEntree2[0]}} </span>
-            </md-list-item>
-            <md-list-item>          
-              <span class="md-list-item-text">En plat : {{gastroPlat[0]}}</span>
-            </md-list-item>
-            <md-list-item>          
-              <span class="md-list-item-text">En dessert : {{gastroDessert1[0]}} et {{gastroDessert2[0]}}</span>
-            </md-list-item>
-          </md-list>
+          <p style="border: 1px solid black"> <br> Aujourdhui, le restaurant vous propose :<br><br>
+          En entrée : {{gastroEntree1[0]}} et {{gastroEntree2[0]}}<br>
+          En plat : {{gastroPlat[0]}}<br>
+          En dessert : {{gastroDessert1[0]}} et {{gastroDessert2[0]}}<br><br>
           Le tout pour {{priceGastro()}}€<br>
           
           <md-button @click="ajouterPanier('Menu gastronomique', priceGastro())">Ajouter au panier</md-button></p>
